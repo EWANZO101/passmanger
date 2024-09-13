@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Sessions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">Active Sessions</h1>
+        <table class="min-w-full bg-gray-800 border border-gray-700 rounded-lg">
+            <thead>
+                <tr>
+                    <th class="py-2 px-4 border-b border-gray-600">ID</th>
+                    <th class="py-2 px-4 border-b border-gray-600">Username</th>
+                    <th class="py-2 px-4 border-b border-gray-600">IP Address</th>
+                    <th class="py-2 px-4 border-b border-gray-600">Last Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for session in sessions %}
+                <tr>
+                    <td class="py-2 px-4 border-b border-gray-600">{{ session[0] }}</td>
+                    <td class="py-2 px-4 border-b border-gray-600">{{ session[1] }}</td>
+                    <td class="py-2 px-4 border-b border-gray-600">{{ session[2] }}</td>
+                    <td class="py-2 px-4 border-b border-gray-600">{{ session[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
